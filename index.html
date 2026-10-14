@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sindh Shoe Courier</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@500;600&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ink:#14204A;
+  --ground:#F4F5FA;
+  --tint:#E2E6F3;
+  --line:#C9CFE3;
+  --muted:#4A5478;
+  --accent:#B8282F;
+  --card:#FFFFFF;
+  --display:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Public Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+a{color:var(--ink)}
+a:hover{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+h1,h2,h3{margin:0;font-family:var(--display);text-wrap:balance}
+p{margin:0}
+.band{height:16px;background-color:var(--ink);background-image:radial-gradient(circle,#F4F5FA 0 2px,transparent 2.5px),radial-gradient(circle,#B8282F 0 3px,transparent 3.5px);background-size:16px 16px;background-position:0 0,8px 8px}
+.wrap{max-width:1200px;margin:0 auto}
+.pad{padding-left:max(16px,4vw);padding-right:max(16px,4vw)}
+.eyebrow{font-family:var(--mono);font-weight:600;font-size:13px;letter-spacing:.1em;color:var(--muted)}
+.eyebrow.red{color:var(--accent)}
+.label{font-family:var(--mono);font-weight:600;font-size:12px;letter-spacing:.1em;color:var(--muted)}
+h2{font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.08;letter-spacing:-.02em}
+h3{font-weight:700;font-size:22px}
+.lead{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;min-height:52px;padding:0 28px;font-weight:600;text-decoration:none;border:0;font-family:var(--body);font-size:17px;cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.primary:hover{color:#fff;filter:brightness(.92)}
+.btn.outline{border:2px solid var(--ink);color:var(--ink)}
+
+/* header */
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding-block:18px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-name{display:flex;flex-direction:column;line-height:1.1}
+.brand-name b{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.01em}
+.brand-name span{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.08em;color:var(--muted)}
+nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px}
+nav a{text-decoration:none;font-weight:500;min-height:44px;display:inline-flex;align-items:center}
+nav a.cta{font-weight:600;padding:0 22px;background:var(--accent);color:#fff}
+nav a.cta:hover{color:#fff;filter:brightness(.92)}
+
+/* hero */
+.hero{padding-block:48px 80px}
+.hero .wrap{display:flex;flex-wrap:wrap;gap:48px;align-items:stretch}
+.hero-copy{flex:1 1 480px;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:28px}
+.hero h1{font-weight:800;font-size:clamp(40px,6.2vw,76px);line-height:1.02;letter-spacing:-.025em}
+.hero-copy p{max-width:540px;font-size:19px;color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.facts{display:flex;flex-wrap:wrap;gap:12px 40px;padding-top:12px;border-top:2px solid var(--line)}
+.facts div{display:flex;flex-direction:column}
+.facts b{font-family:var(--display);font-weight:800;font-size:36px;line-height:1.1;font-variant-numeric:tabular-nums}
+.facts span{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.1em;color:var(--muted)}
+.ladder-card{flex:1 1 360px;min-width:0;background:var(--ink);color:#fff;padding:32px 32px 28px;display:flex;flex-direction:column;gap:20px}
+.ladder-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-family:var(--mono);font-weight:600;font-size:12px;letter-spacing:.1em;color:#C5CBE6}
+.ladder{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.stop{display:flex;gap:18px;min-height:58px}
+.stop .rail{display:flex;flex-direction:column;align-items:center;width:18px;flex:none}
+.stop .dot{width:14px;height:14px;border-radius:50%;background:var(--ink);border:2px solid #fff;margin-top:6px;flex:none}
+.stop.punjab .dot{border-color:#7B86B8}
+.stop.hub .dot{width:18px;height:18px;margin-top:4px;background:var(--accent);border:3px solid #fff}
+.stop .line{flex:1;width:2px;min-height:24px;background:#4A5788}
+.stop:last-child .line{display:none}
+.stop .txt{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;padding-bottom:14px;min-width:0}
+.stop .name{font-family:var(--display);font-weight:700;font-size:22px;line-height:1.2}
+.stop.punjab .name{color:#C5CBE6}
+.stop .note{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.08em;color:#C5CBE6}
+
+/* routes */
+.routes{padding-block:80px;background:var(--tint)}
+.routes .wrap{display:flex;flex-direction:column;gap:40px}
+.sec-head{display:flex;flex-direction:column;gap:12px;max-width:720px}
+.hubs{display:flex;flex-wrap:wrap;gap:20px}
+.hub{flex:1 1 360px;min-width:0;background:var(--card);padding:28px;display:flex;flex-direction:column;gap:8px;border-top:6px solid var(--accent)}
+.hub h3{font-size:26px}
+.hub p{color:var(--muted)}
+.explorer{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start}
+.route-list{flex:1 1 280px;max-width:380px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.route-btn{display:flex;flex-direction:column;align-items:flex-start;gap:2px;width:100%;min-height:64px;padding:12px 18px;text-align:left;cursor:pointer;border:2px solid var(--ink);background:var(--card);color:var(--ink);font-family:var(--body)}
+.route-btn[aria-pressed="true"]{background:var(--ink);color:#fff}
+.route-btn b{font-family:var(--display);font-weight:700;font-size:18px;line-height:1.25}
+.route-btn span{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.08em;opacity:.8}
+.panel{flex:2 1 460px;min-width:0;background:var(--card);padding:32px;display:flex;flex-direction:column;gap:28px}
+.panel h3{font-weight:800;font-size:clamp(26px,3.4vw,36px);line-height:1.1;letter-spacing:-.015em}
+.panel-head{display:flex;flex-direction:column;gap:8px}
+.leg{display:flex;flex-direction:column;gap:12px}
+.leg .label{font-weight:500;font-size:12px;letter-spacing:.08em}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:8px 6px}
+.chipwrap{display:inline-flex;align-items:center;gap:6px}
+.chip{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;font-size:15px;font-weight:500;border:1.5px solid #9AA3C7;background:var(--card);color:var(--ink)}
+.chip.hub-chip{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.arrow{font-family:var(--mono);color:var(--muted)}
+.panel-foot{display:flex;flex-wrap:wrap;gap:12px 32px;padding-top:20px;border-top:2px solid var(--tint);font-size:15px}
+.panel-foot .label{font-size:12px;letter-spacing:.08em}
+
+/* how */
+.how{padding-block:80px}
+.how .wrap{display:flex;flex-direction:column;gap:40px}
+.steps{display:flex;flex-wrap:wrap;gap:20px}
+.step{flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:12px;padding-top:20px;border-top:4px solid var(--ink)}
+.step p{color:var(--muted)}
+
+/* rates */
+.rates{padding-block:80px;background:var(--tint)}
+.rates .wrap{display:flex;flex-direction:column;gap:32px}
+.table-box{overflow-x:auto;background:var(--card)}
+.table{min-width:620px;display:flex;flex-direction:column}
+.row{display:flex;gap:16px;padding:18px 24px;border-bottom:1px solid var(--line);align-items:baseline}
+.row:last-child{border-bottom:0}
+.row.head{background:var(--ink);color:#fff;font-family:var(--mono);font-weight:600;font-size:12px;letter-spacing:.1em;padding-block:16px;border-bottom:0}
+.row .c1{flex:2 1 0;font-weight:600}
+.row.head .c1{font-weight:600}
+.row .c2{flex:3 1 0;color:var(--muted)}
+.row.head .c2{color:#fff}
+.row .c3{flex:1.2 1 0;font-variant-numeric:tabular-nums}
+.row .c4{flex:1 1 0}
+
+/* book */
+.book{padding-block:80px}
+.book .wrap{display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start}
+.book-info{flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.contact{display:flex;flex-direction:column;gap:14px;padding-top:12px;border-top:2px solid var(--line)}
+.contact div{display:flex;flex-direction:column}
+.contact strong{font-weight:600;font-size:20px}
+form{flex:1.4 1 420px;min-width:0;background:var(--card);padding:32px;display:flex;flex-direction:column;gap:20px}
+.frow{display:flex;flex-wrap:wrap;gap:20px}
+.field{flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:6px}
+.field.narrow{max-width:220px}
+.field label{font-weight:600;font-size:15px}
+input,select,textarea{width:100%;border:1.5px solid #9AA3C7;background:var(--card);color:var(--ink);font-family:var(--body);font-size:16px}
+input,select{height:48px;padding:0 14px}
+textarea{padding:12px 14px;resize:vertical}
+.submit-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+.thanks{font-weight:500}
+
+/* footer */
+footer{background:var(--ink);color:#fff}
+footer .inner{padding-block:40px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px 40px}
+footer .f-name{font-family:var(--display);font-weight:800;font-size:22px}
+footer .f-sub,footer .f-contact{color:#C5CBE6;font-size:15px}
+footer .f-contact{display:flex;flex-direction:column;gap:4px}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="band"></div>
+
+<header class="pad">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" fill="#14204A"/><polyline points="10,12 22,12 22,32 34,32" fill="none" stroke="#F4F5FA" stroke-width="3"/><circle cx="10" cy="12" r="4" fill="#F4F5FA"/><circle cx="34" cy="32" r="4.5" fill="#B8282F"/></svg>
+      <span class="brand-name"><b>Sindh Shoe Courier</b><span>PUNJAB TO SINDH</span></span>
+    </a>
+    <nav aria-label="Main">
+      <a href="#routes">Routes</a>
+      <a href="#how">How it works</a>
+      <a href="#rates">Rates</a>
+      <a class="cta" href="#book">Book a delivery</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero pad">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="eyebrow red">N-5 · PUNJAB TO SINDH</div>
+      <h1>Punjab's shoes, at every Sindh shop.</h1>
+      <p>A car leaves Punjab with your cartons, enters Sindh at Ghotki and drops them at our Sukkur and Hyderabad hubs. From the hub, each route has its own delivery day.</p>
+      <div class="actions">
+        <a class="btn primary" href="#book">Book a delivery</a>
+        <a class="btn outline" href="#routes">See the routes</a>
+      </div>
+      <div class="facts">
+        <div><b>5</b><span>ROUTES</span></div>
+        <div><b>2</b><span>HUBS</span></div>
+        <div><b id="town-count">37</b><span>SINDH TOWNS</span></div>
+      </div>
+    </div>
+
+    <div class="ladder-card">
+      <div class="ladder-head"><span>MAIN LINE, SOUTHBOUND</span><span>N-5</span></div>
+      <ol class="ladder">
+        <li class="stop punjab"><div class="rail"><div class="dot"></div><div class="line"></div></div><div class="txt"><span class="name">Rahim Yar Khan</span><span class="note">PUNJAB</span></div></li>
+        <li class="stop punjab"><div class="rail"><div class="dot"></div><div class="line"></div></div><div class="txt"><span class="name">Sadiqabad</span><span class="note">PUNJAB</span></div></li>
+        <li class="stop"><div class="rail"><div class="dot"></div><div class="line"></div></div><div class="txt"><span class="name">Ghotki</span><span class="note">SINDH ENTRY</span></div></li>
+        <li class="stop hub"><div class="rail"><div class="dot"></div><div class="line"></div></div><div class="txt"><span class="name">Sukkur</span><span class="note">HUB 1</span></div></li>
+        <li class="stop"><div class="rail"><div class="dot"></div><div class="line"></div></div><div class="txt"><span class="name">Khairpur</span></div></li>
+        <li class="stop"><div class="rail"><div class="dot"></div><div class="line"></div></div><div class="txt"><span class="name">Nawabshah</span></div></li>
+        <li class="stop hub"><div class="rail"><div class="dot"></div><div class="line"></div></div><div class="txt"><span class="name">Hyderabad</span><span class="note">HUB 2</span></div></li>
+        <li class="stop"><div class="rail"><div class="dot"></div><div class="line"></div></div><div class="txt"><span class="name">Karachi</span><span class="note">VIA M-9</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="routes pad" id="routes">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">DELIVERY ROUTES</div>
+      <h2>Two hubs, five routes, every town in order.</h2>
+      <p class="lead">Pick a route to see its towns in the order the car stops. Your cartons go out on your route's day.</p>
+    </div>
+
+    <div class="hubs">
+      <div class="hub">
+        <div class="label">HUB 1 · UPPER SINDH</div>
+        <h3>Sukkur Hub</h3>
+        <p>Cartons for Routes 1 and 2 are sorted here, so upper Sindh stock never travels down to Hyderabad and back.</p>
+      </div>
+      <div class="hub">
+        <div class="label">HUB 2 · LOWER SINDH</div>
+        <h3>Hyderabad Hub</h3>
+        <p>Routes 3, 4 and 5 start here, including the Karachi run on the M-9 motorway.</p>
+      </div>
+    </div>
+
+    <div class="explorer">
+      <div class="route-list" id="route-list" role="group" aria-label="Routes"></div>
+      <div class="panel" aria-live="polite">
+        <div class="panel-head">
+          <div class="eyebrow red" id="p-tag"></div>
+          <h3 id="p-name"></h3>
+          <p class="lead" id="p-blurb"></p>
+        </div>
+        <div id="p-legs" style="display:flex;flex-direction:column;gap:28px"></div>
+        <div class="panel-foot">
+          <span><span class="label">HUB </span><span id="p-hub"></span></span>
+          <span><span class="label">RUN DAY </span>[DAY]</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how pad" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">HOW IT WORKS</div>
+      <h2>From a Punjab warehouse to a Sindh shelf.</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="eyebrow red">STEP 1</span><h3>Send your list</h3><p>Give us the shop name, town and number of pairs on WhatsApp or through the form below.</p></div>
+      <div class="step"><span class="eyebrow red">STEP 2</span><h3>We load in Punjab</h3><p>Cartons are collected at [PUNJAB PICKUP CITY], counted and loaded onto the car.</p></div>
+      <div class="step"><span class="eyebrow red">STEP 3</span><h3>The car runs the N-5</h3><p>One run enters Sindh at Ghotki, then drops cartons at the Sukkur and Hyderabad hubs.</p></div>
+      <div class="step"><span class="eyebrow red">STEP 4</span><h3>Hub to your shop</h3><p>Each route has a fixed day. Your carton goes out with the rider on your route's day.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="rates pad" id="rates">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">RATES</div>
+      <h2>One rate per carton, by zone.</h2>
+      <p class="lead">Fill in your own prices before you publish. Rates are per carton, so a shop can plan its order before booking.</p>
+    </div>
+    <div class="table-box">
+      <div class="table" role="table" aria-label="Rates by zone">
+        <div class="row head" role="row"><span class="c1" role="columnheader">ZONE</span><span class="c2" role="columnheader">MAIN TOWNS</span><span class="c3" role="columnheader">PER CARTON</span><span class="c4" role="columnheader">RUN DAY</span></div>
+        <div class="row" role="row"><span class="c1" role="cell">Upper Sindh</span><span class="c2" role="cell">Ghotki, Daharki, Sukkur, Khairpur</span><span class="c3" role="cell">[RS ___]</span><span class="c4" role="cell">[DAY]</span></div>
+        <div class="row" role="row"><span class="c1" role="cell">Larkana belt</span><span class="c2" role="cell">Larkana, Jacobabad, Dadu, Sehwan</span><span class="c3" role="cell">[RS ___]</span><span class="c4" role="cell">[DAY]</span></div>
+        <div class="row" role="row"><span class="c1" role="cell">Central Sindh</span><span class="c2" role="cell">Moro, Nawabshah, Hala, Hyderabad</span><span class="c3" role="cell">[RS ___]</span><span class="c4" role="cell">[DAY]</span></div>
+        <div class="row" role="row"><span class="c1" role="cell">South-East Sindh</span><span class="c2" role="cell">Mirpurkhas, Umerkot, Sanghar, Khipro</span><span class="c3" role="cell">[RS ___]</span><span class="c4" role="cell">[DAY]</span></div>
+        <div class="row" role="row"><span class="c1" role="cell">South Sindh and Karachi</span><span class="c2" role="cell">Badin, Thatta, Sujawal, Karachi</span><span class="c3" role="cell">[RS ___]</span><span class="c4" role="cell">[DAY]</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="book pad" id="book">
+  <div class="wrap">
+    <div class="book-info">
+      <div class="eyebrow">BOOK A DELIVERY</div>
+      <h2>Tell us where the cartons go.</h2>
+      <p class="lead">Send the town and the number of pairs. We reply with your route day and the rate.</p>
+      <div class="contact">
+        <div><span class="label">WHATSAPP</span><strong>[WHATSAPP NUMBER]</strong></div>
+        <div><span class="label">OFFICE</span><span style="font-weight:500">[OFFICE ADDRESS]</span></div>
+      </div>
+    </div>
+
+    <form id="book-form">
+      <div class="frow">
+        <div class="field"><label for="f-name">Shop or customer name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="f-phone">Phone or WhatsApp</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+      </div>
+      <div class="frow">
+        <div class="field"><label for="f-from">Pickup city in Punjab</label><input id="f-from" name="from" type="text"></div>
+        <div class="field"><label for="f-to">Deliver to</label><select id="f-to" name="to"></select></div>
+      </div>
+      <div class="field narrow"><label for="f-pairs">Number of pairs</label><input id="f-pairs" name="pairs" type="number" min="1" inputmode="numeric"></div>
+      <div class="field"><label for="f-notes">Notes</label><textarea id="f-notes" name="notes" rows="3"></textarea></div>
+      <div class="submit-row">
+        <button class="btn primary" type="submit">Send request</button>
+        <span class="thanks" id="thanks" role="status" hidden>Request noted. We will confirm your route day.</span>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="band"></div>
+  <div class="inner pad">
+    <div class="wrap">
+      <div><div class="f-name">Sindh Shoe Courier</div><div class="f-sub">Punjab to Sindh, hub by hub.</div></div>
+      <div class="f-contact"><span>WhatsApp [WHATSAPP NUMBER]</span><span>[OFFICE ADDRESS]</span></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var hubs = ['Sukkur', 'Hyderabad'];
+  var routes = [
+    { name: 'Route 1: Upper Sindh', tag: 'ROUTE 1 · N-5', hub: 'Sukkur',
+      blurb: 'The first stretch of the N-5 after the Punjab border, from Ghotki to Khairpur.',
+      legs: [['Ghotki','Mirpur Mathelo','Ubauro','Daharki','Obaro','Pano Aqil','Sukkur','Rohri','Khairpur']] },
+    { name: 'Route 2: Sukkur to Larkana', tag: 'ROUTE 2 · TWO LEGS', hub: 'Sukkur',
+      blurb: 'Two legs out of Sukkur: north to Kashmore, and south-west through Larkana and Dadu to Jamshoro.',
+      legs: [['Sukkur','Shikarpur','Jacobabad','Kandhkot','Kashmore'],['Sukkur','Larkana','Mohenjo Daro','Dadu','Sehwan','Jamshoro']] },
+    { name: 'Route 3: Central Sindh', tag: 'ROUTE 3 · N-5', hub: 'Hyderabad',
+      blurb: 'The N-5 from Khairpur down to Hyderabad, with stops at every main town on the way.',
+      legs: [['Khairpur','Moro','Naushahro Feroze','Nawabshah','Sakrand','Hala','Hyderabad']] },
+    { name: 'Route 4: South-East Sindh', tag: 'ROUTE 4 · TWO LEGS', hub: 'Hyderabad',
+      blurb: 'Two legs from Hyderabad: one to Umerkot through Mirpurkhas, one to Khipro through Sanghar.',
+      legs: [['Hyderabad','Tando Allahyar','Mirpurkhas','Digri','Umerkot'],['Hyderabad','Tando Adam','Sanghar','Khipro']] },
+    { name: 'Route 5: South Sindh', tag: 'ROUTE 5 · THREE LEGS', hub: 'Hyderabad',
+      blurb: 'Three legs from Hyderabad: to Badin, to Sujawal through Thatta, and to Karachi on the M-9 motorway.',
+      legs: [['Hyderabad','Matiari','Tando Muhammad Khan','Badin'],['Hyderabad','Jamshoro','Thatta','Sujawal'],['Hyderabad','Karachi']] }
+  ];
+
+  var towns = [];
+  routes.forEach(function (r) { r.legs.forEach(function (l) { l.forEach(function (s) { if (towns.indexOf(s) < 0) towns.push(s); }); }); });
+  document.getElementById('town-count').textContent = towns.length;
+
+  var sel = document.getElementById('f-to');
+  towns.forEach(function (t) { var o = document.createElement('option'); o.value = t; o.textContent = t; sel.appendChild(o); });
+
+  var list = document.getElementById('route-list');
+  var buttons = routes.map(function (r, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'route-btn';
+    var n = document.createElement('b'); n.textContent = r.name;
+    var h = document.createElement('span'); h.textContent = 'HUB: ' + r.hub.toUpperCase();
+    b.appendChild(n); b.appendChild(h);
+    b.addEventListener('click', function () { show(i); });
+    list.appendChild(b);
+    return b;
+  });
+
+  function show(i) {
+    var r = routes[i];
+    buttons.forEach(function (b, j) { b.setAttribute('aria-pressed', j === i ? 'true' : 'false'); });
+    document.getElementById('p-tag').textContent = r.tag;
+    document.getElementById('p-name').textContent = r.name;
+    document.getElementById('p-blurb').textContent = r.blurb;
+    document.getElementById('p-hub').textContent = r.hub;
+    var legsEl = document.getElementById('p-legs');
+    legsEl.textContent = '';
+    r.legs.forEach(function (stops) {
+      var leg = document.createElement('div'); leg.className = 'leg';
+      var lab = document.createElement('div'); lab.className = 'label';
+      lab.textContent = (stops[0] + ' TO ' + stops[stops.length - 1]).toUpperCase();
+      var chips = document.createElement('div'); chips.className = 'chips';
+      stops.forEach(function (s, j) {
+        var w = document.createElement('span'); w.className = 'chipwrap';
+        var c = document.createElement('span');
+        c.className = 'chip' + (hubs.indexOf(s) >= 0 ? ' hub-chip' : '');
+        c.textContent = s;
+        w.appendChild(c);
+        if (j < stops.length - 1) {
+          var a = document.createElement('span'); a.className = 'arrow'; a.setAttribute('aria-hidden', 'true'); a.textContent = '→';
+          w.appendChild(a);
+        }
+        chips.appendChild(w);
+      });
+      leg.appendChild(lab); leg.appendChild(chips);
+      legsEl.appendChild(leg);
+    });
+  }
+  show(0);
+
+  // Booking form: replace this handler with a real submit (WhatsApp link, Google Sheet, backend).
+  document.getElementById('book-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('thanks').hidden = false;
+  });
+})();
+</script>
+</body>
+</html>
